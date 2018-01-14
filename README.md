@@ -10,4 +10,12 @@ A simple Ruby script that does some funky tests to see if your burst plot is goo
 ## How to use
 * Make sure you have Ruby installed (Windows: https://rubyinstaller.org/)
 * Open a terminal/Cmd and navigate to the validator: example: cd C:\Users\FooUser\Documents\burstcoin\Burst-Plot-Integrity-Checker
-* run ruby validator.rb <PlotFolderLocation> example: ruby validator.rb D:plots\
+* run ruby validator.rb <PlotFolderLocation> example: ruby validator.rb D:plots
+
+## How long does it take?
+* Not very long, it analyses a subset of the nounces. Maybe 1 min per TB
+
+## Known Issues
+* In windows clicking on the terminal pauses the counting, pressing any key resumes. Weird..
+
+
