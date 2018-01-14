@@ -120,7 +120,24 @@ puts "Checking for overlaps".light_blue
 startings.each_with_index { |r,i| 
 	startings.each_with_index { |inner_r,inner_i|
 		next if i==inner_i
-		puts "#{file_names[i]} overlaps with file #{file_names[inner_i]}".red if (r..(ranges[i]+r)).overlaps?(inner_r..(ranges[inner_i]+inner_r))
+		if (r..(ranges[i]+r)).overlaps?(inner_r..(ranges[inner_i]+inner_r))
+
+
+			
+			if inner_r > r
+				n = -1*(inner_r - ranges[i] - r)
+				if n > 0
+					puts "#{file_names[i]} overlaps with file #{file_names[inner_i]}".red
+					puts "#{n} nonces found to be overlapping" 
+				end
+			else
+				n = -1*(r - ranges[inner_i] - inner_r)
+				if n > 0
+					puts "#{file_names[i]} overlaps with file #{file_names[inner_i]}".red
+					puts "#{n} nonces found to be overlapping" if inner_r < r
+				end
+			end
+		end
 	}
 }
 

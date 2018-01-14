@@ -17,5 +17,7 @@ A simple Ruby script that does some funky tests to see if your burst plot is goo
 
 ## Known Issues
 * In windows clicking on the terminal pauses the counting, pressing any key resumes. Weird..
+* Overlapping files show twice
 
-
+## Donations
+If you have some free Burst to give here's my address: BURST-4P7H-83WU-NNBB-H3YVS :)
