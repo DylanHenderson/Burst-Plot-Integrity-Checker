@@ -35,13 +35,17 @@ file_names = []
 
 ARGV.each do|dir_name|
 
-
+# For win vs unix paths
+file_path = "\/"
+if Gem.win_platform?
+	file_path = "\\"
+end
 
 Dir.foreach(dir_name) do |file_name_single|
 	# Check real files
 	next if file_name_single == '.' or file_name_single == '..'
 	# Create full path for file name
-	file_name = dir_name +"\\" + file_name_single
+	file_name = dir_name + file_path + file_name_single
 	begin
 
 		size_reason = "File: #{file_name} has a size that would not fit a whole number of nonces. It's possible this just means that the last nonce cannot be read".red
