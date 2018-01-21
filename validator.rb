@@ -112,7 +112,7 @@ ARGV.each_with_index do|arg,ind|
                 corrupt = Array.new(reads)
                 # For each nonce, read in all the nonces bytes
                 reads.times do |r|
-                    print "Examining nonce #{r*division_factor}\r".light_blue
+                    print "Examining nonce #{r*division_factor}\r".light_blue if r % 1000 == 0
                     # If all the nonces are 0 assume that then the nonce is corrupt, store true if corrupt. Only examine first 16 bytes
                     corrupt[r] = f.read(bytes_per_nonce).unpack("H*")[0] === ('00' * bytes_per_nonce)
                     f.seek((seek_skip)-bytes_per_nonce,IO::SEEK_CUR)
